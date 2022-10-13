@@ -1,0 +1,315 @@
+
+
+import os
+
+while(1):
+#taking the input as choice
+ print("available options are  for CRUD \n")
+ print("press [a] on list\n")
+ print("press [b] on Tuple\n")
+ print("press [c] on set\n")
+ print("press [d] on dictionaries\n")
+ print("press [e] on files\n")
+ print("press [q] for exit\n")
+ option = input("enter a operation you want to perform : \n")
+ try:
+    
+#when the choice is A
+    if (option == 'A' or option == 'a'):
+        
+        print("Crud on List\n")
+        print("0 create a list\n")
+        print("1  Add element in list\n")
+        print("2  Delete element in list\n")
+        print("3  Modify element in list\n")
+        print("4  display the list item\n")
+        print("5  Delete the entire list\n")
+        optionOnList = int(input("enter a operation you want to perform : \n"))
+        
+        
+        try:
+            if(optionOnList == 0):
+                
+                listName=input("Please enter list name : \n")
+                listName=[]
+                print(f"An empty list with name {listName} is created Sucessfully\n")
+                
+            
+            elif(optionOnList == 1):
+                
+                listItem=input("Please enter the item of a list : \n")
+                listName.append( listItem)
+                print(listName)
+                print("Element Added Sucessfully")
+                
+            
+            elif (optionOnList == 2):
+                print(listName)
+                listItem=input("Please enter the item of a list : \n")
+                listName.remove(listItem)
+                print("Element deleted Sucessfully")
+                
+            elif (optionOnList == 3):
+                print(listName)
+                indexOnList=int(input("Please enter the index for which u want to modify the element : \n"))
+                listItem=input("Please enter the updated item of a list : \n")
+                listName[indexOnList] = listItem
+                print("Element updated Sucessfully")
+            
+            elif (optionOnList == 4):
+                print(listName)
+                
+            elif (optionOnList == 5):
+                del listName
+                print("list deleted Sucessfully")
+                
+            else:
+                print("Enter a correct option")
+            
+        except Exception as e:
+            print(f"Please check the error --> {e}")
+                
+#-----for Tuple-------
+
+    elif (option == 'B' or option == 'b'):
+        print("Crud on tuple \n")
+        print("0 create a tuple\n")
+        print("1  Add element in tuple\n")
+        print("2  Delete element in tuple\n")
+        print("3  Modify element in tuple\n")
+        print("4  display the list tuple\n")
+        print("5  Delete the entire tuple\n")
+        
+        optionOnList = int(input("enter a operation you want to perform : \n"))
+        try:
+            if(optionOnList == 0):
+                
+                tupleName=input("Please enter tuple name : \n")
+                tupleName=tuple()
+                print(f"An empty tuple with name {tupleName} is created Sucessfully\n")
+            
+            elif(optionOnList == 1):
+                
+                listOfTuple = list(tupleName)
+                listItem=input("Please enter the item of a tuple : \n")
+                listOfTuple.append(listItem)
+                tupleName = tuple(listOfTuple)
+                print(tupleName)
+                print("Element Added Sucessfully")
+                
+            
+            elif (optionOnList == 2):
+                print(tupleName)
+                listOfTuple = list(tupleName)
+                listItem=input("Please enter the item of a tuple : \n")
+                listOfTuple.remove(listItem)
+                tupleName = tuple(listOfTuple)
+                print("Element deleted Sucessfully")
+                
+            elif (optionOnList == 3):
+                print(tupleName)
+                listOfTuple = list(tupleName)
+                indexOnList=int(input("Please enter the index for which u want to modify the element : \n"))
+                listItem=input("Please enter the item of a tuple : \n")
+                listOfTuple[indexOnList] = listItem
+                tupleName = tuple(listOfTuple)
+                print("Element updated Sucessfully")
+            
+            elif (optionOnList == 4):
+                print(tupleName)
+                
+            elif (optionOnList == 5):
+                del tupleName
+                print("tuple deleted Sucessfully")
+                
+            else:
+                print("Enter a correct option")
+            
+        except Exception as e:
+            print(f"Please check the error --> {e}")
+        
+#-----for set     
+
+    elif (option == 'C' or option =='c'):
+        print("Crud on set \n")
+        print("0 create a set\n")
+        print("1  Add element in set\n")
+        print("2  Delete element in set\n")
+        print("3  Modify element in set\n")
+        print("4  display the list set\n")
+        print("5  Delete the entire set\n")
+        optionOnList = int(input("enter a operation you want to perform : \n"))
+        try:
+            if(optionOnList == 0):
+                
+                setName=input("Please enter set name : \n")
+                setName=set()
+                print(f"An empty set with name {setName} is created Sucessfully\n")
+            
+            
+            elif(optionOnList == 1):
+        
+                setItem=input("Please enter the item of a set : \n")
+                setName.add(setItem)
+                print(setName)
+                print("Element Added Sucessfully")
+                
+            
+            elif (optionOnList == 2):
+                print(setName)
+                setItem=input("Please enter the item of a set : \n")
+                setName.remove (setItem)
+                print("Element deleted Sucessfully")
+                
+            elif (optionOnList == 3):
+                print(setName)
+                newSet=input("Please enter the item of a set : \n")
+                setName.update(newSet)
+                print("Element updated Sucessfully")
+                
+            
+            elif (optionOnList == 4):
+                print(setName)
+            
+            elif (optionOnList == 5):
+                setName.clear()
+                print("set deleted Sucessfully")
+                
+            else:
+                print("Enter a correct option")
+            
+        except Exception as e:
+            print(f"Please check the error --> {e}")
+#------for dictionaries--
+
+#when the choice is D  
+    elif(option == 'D' or option == 'd'):
+        print("Crud on dictionaries \n")
+        print("0 create a dictionaries\n")
+        print("1  Add element in dictionaries\n")
+        print("2  Delete element in dictionaries\n")
+        print("3  Modify element in dictionaries\n")
+        print("4  display the list dictionaries\n")
+        print("5  Delete the entire dictionaries\n")
+        optionOnList = int(input("enter a operation you want to perform : \n"))
+        try:
+            if(optionOnList == 0):
+                
+                dictName=input("Please enter dictionaries name : \n")
+                dictName={}
+                print(f"An empty dictionaries with name {dictName} is created Sucessfully\n")
+            
+            
+            elif(optionOnList == 1):
+        
+                dictkey=input("Please enter the key of a dictionaries : \n")
+                dictvalues=input("Please enter the value of a key in  dictionaries : \n")
+                dictName[dictkey] = dictvalues
+                print(dictName)
+                print("Element Added Sucessfully")
+                
+            
+            elif (optionOnList == 2):
+                print(dictName)
+                dictkey=input("Please enter the key of a dictionaries : \n")
+                dictName.pop(dictkey)
+                print("Element deleted Sucessfully")
+                
+            elif (optionOnList == 3):
+                print(dictName)
+                dictkey=input("Please enter the key of a dictionaries : \n")
+                dictvalues=input("Please enter the value of a key in  dictionaries : \n")
+                dictName.update({ dictkey : dictvalues})
+                print("Element updated Sucessfully")
+                
+            
+            elif (optionOnList == 4):
+                print(dictName)
+            
+            elif (optionOnList == 5):
+                del dictName
+                print("dictionaries deleted Sucessfully")
+                
+            else:
+                print("Enter a correct option")
+            
+        except Exception as e:
+            print(f"Please check the error --> {e}")
+        
+#-----for files----------
+    elif (option == 'E' or option == 'e'):
+        
+        print("Crud on files \n")
+        print("0 create a files\n")
+        print("1  Add content in files\n")
+        print("2  Delete content in files\n")
+        print("3  Modify element in files\n")
+        print("4  display the list files\n")
+        print("5  Delete the entire files\n")
+        optionOnList = int(input("enter a operation you want to perform : \n"))
+        try:
+            if(optionOnList == 0):
+                
+                fileName=input("Please enter file name with extension : \n")
+                f = open(fileName , "w")
+                print(f"An empty file with name {fileName} is created Sucessfully\n")
+            
+            
+            elif(optionOnList == 1):
+        
+                fileContent=input("Please enter the file content : \n")
+                f = open(fileName, "a")
+                f.write(fileContent)
+                f.close()
+                print("file content Added Sucessfully")
+                
+            
+            elif (optionOnList == 2):
+                
+                f = open(fileName , "w")
+                f.close()
+                print("file content deleted Sucessfully")
+                
+            elif (optionOnList == 3):
+                fileContent=input("Please enter the file content : \n")
+                f = open(fileName, "a")
+                f.write(fileContent)
+                f.close()
+                print("file content updated Sucessfully")
+                
+            
+            elif (optionOnList == 4):
+                
+                f = open(fileName , "r")
+                print(f.read())
+            
+            elif (optionOnList == 5):
+
+                if os.path.exists(fileName):
+                    os.remove(fileName)
+                    print(f"{fileName} is deleted Sucessfully")
+                else:
+                    print("The file does not exist")
+                
+            else:
+                print("Enter a correct option")
+            
+        except Exception as e:
+            print(f"Please check the error --> {e}")
+        
+        
+    elif (option == 'Q' or option == 'q'):
+        print("**Program exit**")
+        break
+#when the choice is invalid
+    else:
+        print("please enter valid option")
+    print("do you want to continue press y and any other key to exit)\n")
+    decision = input("enter your decision : \n")
+    if(decision=='y' or decision =='Y'):
+        print("Welcome Again\n")
+    else:
+        print("***Thank You***\n")
+        break
+ except Exception as e:
+    print(f"Please check the error --> {e}")
